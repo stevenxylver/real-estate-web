@@ -30,13 +30,17 @@ export default function Facilities() {
                     const json = await res.json();
                     const data: Facility[] = (json.data || []).map((item: any) => {
                         const imageUrl = item.image?.url || item.image?.data?.attributes?.url;
+                        // Check if URL is already a full URL (Cloudinary) or needs STRAPI_URL prefix
+                        const fullImageUrl = imageUrl
+                            ? (imageUrl.startsWith('http') ? imageUrl : `${STRAPI_URL}${imageUrl}`)
+                            : "";
                         return {
                             id: item.id,
                             name: item.name || "",
                             description: item.description || "",
                             location: item.location || "",
                             type: item.type || "",
-                            image: imageUrl ? `${STRAPI_URL}${imageUrl}` : "",
+                            image: fullImageUrl,
                         };
                     });
                     if (data.length > 0) {
