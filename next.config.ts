@@ -16,6 +16,11 @@ const nextConfig: NextConfig = {
         port: strapiPort,
         pathname: "/uploads/**",
       },
+      {
+        protocol: "https",
+        hostname: "res.cloudinary.com",
+        pathname: "/**",
+      },
     ],
   },
 };
