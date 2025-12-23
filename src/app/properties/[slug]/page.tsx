@@ -21,16 +21,22 @@ export default async function PropertyDetailPage({ params }: PageProps) {
         notFound();
     }
 
+    // Helper function to build full URL
+    const buildFullUrl = (url: string | undefined | null): string | null => {
+        if (!url) return null;
+        return url.startsWith('http') ? url : `${STRAPI_URL}${url}`;
+    };
+
     // Handle image for both Strapi v4 and v5 formats (same as PropertyGrid)
     const imageUrlPath = property.image?.data?.attributes?.url || property.image?.url || property.image?.[0]?.url;
-    const imageUrl = imageUrlPath ? `${STRAPI_URL}${imageUrlPath}` : null;
+    const imageUrl = buildFullUrl(imageUrlPath);
 
     // Handle gallery images (Strapi v4 and v5 formats)
     const galleryData = property.gallery?.data || property.gallery || [];
     const galleryImages: string[] = (Array.isArray(galleryData) ? galleryData : [])
         .map((img: any) => {
             const imgUrl = img?.attributes?.url || img?.url;
-            return imgUrl ? `${STRAPI_URL}${imgUrl}` : null;
+            return buildFullUrl(imgUrl);
         })
         .filter((url): url is string => url !== null);
 
@@ -45,7 +51,7 @@ export default async function PropertyDetailPage({ params }: PageProps) {
 
     // Handle brosur URL
     const brosurPath = property.brosur?.data?.attributes?.url || property.brosur?.url;
-    const brosurUrl = brosurPath ? `${STRAPI_URL}${brosurPath}` : null;
+    const brosurUrl = buildFullUrl(brosurPath);
 
     return (
         <>

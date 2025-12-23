@@ -30,6 +30,14 @@ export default async function PropertyGrid() {
         const imageUrl = p.image?.data?.attributes?.url || p.image?.url || p.image?.[0]?.url;
         const brosurUrl = p.brosur?.data?.attributes?.url || p.brosur?.url;
 
+        // Build full URL - don't add base URL if it's already a full URL (Cloudinary)
+        const fullImageUrl = imageUrl
+            ? (imageUrl.startsWith('http') ? imageUrl : `${STRAPI_URL}${imageUrl}`)
+            : undefined;
+        const fullBrosurUrl = brosurUrl
+            ? (brosurUrl.startsWith('http') ? brosurUrl : `${STRAPI_URL}${brosurUrl}`)
+            : undefined;
+
         return {
             slug: p.slug,
             title: p.title,
@@ -38,10 +46,10 @@ export default async function PropertyGrid() {
             bathrooms: p.bathrooms,
             location: p.location,
             status_sale: p.status_sale || p.status,
-            image: imageUrl ? `${STRAPI_URL}${imageUrl}` : undefined,
+            image: fullImageUrl,
             luastanah: p.luastanah,
             luasbangunan: p.luasbangunan,
-            brosur: brosurUrl ? `${STRAPI_URL}${brosurUrl}` : undefined,
+            brosur: fullBrosurUrl,
         };
     });
 

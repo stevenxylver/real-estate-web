@@ -36,6 +36,15 @@ async function PropertiesContent({ page }: { page: number }) {
 
         // Handle image for both Strapi v4 and v5 formats
         const imageUrl = p.image?.data?.attributes?.url || p.image?.url || p.image?.[0]?.url;
+        const brosurUrl = p.brosur?.data?.attributes?.url || p.brosur?.url;
+
+        // Build full URL - don't add base URL if it's already a full URL (Cloudinary)
+        const fullImageUrl = imageUrl
+            ? (imageUrl.startsWith('http') ? imageUrl : `${STRAPI_URL}${imageUrl}`)
+            : undefined;
+        const fullBrosurUrl = brosurUrl
+            ? (brosurUrl.startsWith('http') ? brosurUrl : `${STRAPI_URL}${brosurUrl}`)
+            : undefined;
 
         return {
             slug: p.slug,
@@ -45,10 +54,10 @@ async function PropertiesContent({ page }: { page: number }) {
             bathrooms: p.bathrooms,
             location: p.location,
             status_sale: p.status_sale || p.status,
-            image: imageUrl ? `${STRAPI_URL}${imageUrl}` : undefined,
+            image: fullImageUrl,
             luastanah: p.luastanah,
             luasbangunan: p.luasbangunan,
-            brosur: p.brosur?.data?.attributes?.url || p.brosur?.url ? `${STRAPI_URL}${p.brosur?.data?.attributes?.url || p.brosur?.url}` : undefined,
+            brosur: fullBrosurUrl,
         };
     });
 

@@ -219,13 +219,16 @@ export async function getFacilities(): Promise<Facility[]> {
         // Transform Strapi response to Facility interface
         return (json.data || []).map((item: any) => {
             const imageUrl = item.image?.url || item.image?.data?.attributes?.url;
+            const fullImageUrl = imageUrl
+                ? (imageUrl.startsWith('http') ? imageUrl : `${STRAPI_URL}${imageUrl}`)
+                : "";
             return {
                 id: item.id,
                 name: item.name || "",
                 description: item.description || "",
                 location: item.location || "",
                 type: item.type || "",
-                image: imageUrl ? `${STRAPI_URL}${imageUrl}` : "",
+                image: fullImageUrl,
             };
         });
     } catch (error) {
