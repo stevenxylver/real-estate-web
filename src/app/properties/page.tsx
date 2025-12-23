@@ -5,6 +5,8 @@ import Pagination from "@/components/Pagination";
 import { getProperties } from "@/lib/strapi";
 import { Suspense } from "react";
 
+const STRAPI_URL = process.env.NEXT_PUBLIC_STRAPI_URL || "http://localhost:1337";
+
 interface Property {
     slug: string;
     title: string;
@@ -43,10 +45,10 @@ async function PropertiesContent({ page }: { page: number }) {
             bathrooms: p.bathrooms,
             location: p.location,
             status_sale: p.status_sale || p.status,
-            image: imageUrl ? `http://localhost:1337${imageUrl}` : undefined,
+            image: imageUrl ? `${STRAPI_URL}${imageUrl}` : undefined,
             luastanah: p.luastanah,
             luasbangunan: p.luasbangunan,
-            brosur: p.brosur?.data?.attributes?.url || p.brosur?.url ? `http://localhost:1337${p.brosur?.data?.attributes?.url || p.brosur?.url}` : undefined,
+            brosur: p.brosur?.data?.attributes?.url || p.brosur?.url ? `${STRAPI_URL}${p.brosur?.data?.attributes?.url || p.brosur?.url}` : undefined,
         };
     });
 

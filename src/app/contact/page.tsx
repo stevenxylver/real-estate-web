@@ -46,7 +46,8 @@ export default function ContactPage() {
         setSubmitStatus("idle");
 
         try {
-            const res = await fetch("http://localhost:1337/api/faqs", {
+            const strapiUrl = process.env.NEXT_PUBLIC_STRAPI_URL || "http://localhost:1337";
+            const res = await fetch(`${strapiUrl}/api/faqs`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

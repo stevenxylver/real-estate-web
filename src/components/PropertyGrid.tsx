@@ -2,6 +2,8 @@ import Link from "next/link";
 import PropertyCard from "./PropertyCard";
 import { getProperties } from "@/lib/strapi";
 
+const STRAPI_URL = process.env.NEXT_PUBLIC_STRAPI_URL || "http://localhost:1337";
+
 interface Property {
     slug: string;
     title: string;
@@ -26,6 +28,7 @@ export default async function PropertyGrid() {
 
         // Handle image for both Strapi v4 and v5 formats
         const imageUrl = p.image?.data?.attributes?.url || p.image?.url || p.image?.[0]?.url;
+        const brosurUrl = p.brosur?.data?.attributes?.url || p.brosur?.url;
 
         return {
             slug: p.slug,
@@ -35,10 +38,10 @@ export default async function PropertyGrid() {
             bathrooms: p.bathrooms,
             location: p.location,
             status_sale: p.status_sale || p.status,
-            image: imageUrl ? `http://localhost:1337${imageUrl}` : undefined,
+            image: imageUrl ? `${STRAPI_URL}${imageUrl}` : undefined,
             luastanah: p.luastanah,
             luasbangunan: p.luasbangunan,
-            brosur: p.brosur?.data?.attributes?.url || p.brosur?.url ? `http://localhost:1337${p.brosur?.data?.attributes?.url || p.brosur?.url}` : undefined,
+            brosur: brosurUrl ? `${STRAPI_URL}${brosurUrl}` : undefined,
         };
     });
 

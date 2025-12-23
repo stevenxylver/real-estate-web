@@ -11,7 +11,7 @@ type PageProps = {
     params: Promise<{ slug: string }>;
 };
 
-const STRAPI_URL = "http://localhost:1337";
+const STRAPI_URL = process.env.NEXT_PUBLIC_STRAPI_URL || "http://localhost:1337";
 
 export default async function PropertyDetailPage({ params }: PageProps) {
     const { slug } = await params;

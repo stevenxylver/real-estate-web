@@ -15,8 +15,9 @@ export default function Navbar() {
     useEffect(() => {
         async function fetchLatestProperty() {
             try {
+                const strapiUrl = process.env.NEXT_PUBLIC_STRAPI_URL || "http://localhost:1337";
                 const res = await fetch(
-                    "http://localhost:1337/api/properties?sort=publishedAt:desc&pagination[limit]=1"
+                    `${strapiUrl}/api/properties?sort=publishedAt:desc&pagination[limit]=1`
                 );
                 const json = await res.json();
                 if (json.data && json.data[0]) {
