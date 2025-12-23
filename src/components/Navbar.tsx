@@ -17,7 +17,7 @@ export default function Navbar() {
             try {
                 const strapiUrl = process.env.NEXT_PUBLIC_STRAPI_URL || "http://localhost:1337";
                 const res = await fetch(
-                    `${strapiUrl}/api/properties?sort=publishedAt:desc&pagination[limit]=1`
+                    `${strapiUrl}/api/properties?populate=*&sort=publishedAt:desc&pagination[limit]=1`
                 );
                 const json = await res.json();
                 if (json.data && json.data[0]) {

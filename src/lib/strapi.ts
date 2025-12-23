@@ -177,7 +177,7 @@ export async function getPropertyBySlug(slug: string) {
 export async function getLatestProperty() {
     try {
         const res = await fetch(
-            `${STRAPI_URL}/api/properties?sort=publishedAt:desc&pagination[limit]=1`,
+            `${STRAPI_URL}/api/properties?populate=*&sort=publishedAt:desc&pagination[limit]=1`,
             { cache: "no-store" }
         );
 
