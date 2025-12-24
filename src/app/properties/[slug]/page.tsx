@@ -27,14 +27,8 @@ export default async function PropertyDetailPage({ params }: PageProps) {
         return url.startsWith('http') ? url : `${STRAPI_URL}${url}`;
     };
 
-    // Helper function to fix Cloudinary PDF URLs - add fl_attachment for download
+    // Helper function for PDF URLs - return as-is (no transformation needed)
     const fixPdfUrl = (url: string | null): string | null => {
-        if (!url) return null;
-        // For Cloudinary URLs with PDF extension, add fl_attachment flag
-        if (url.includes('cloudinary.com') && url.toLowerCase().endsWith('.pdf')) {
-            // Add fl_attachment flag after /upload/ to force download
-            return url.replace('/upload/', '/upload/fl_attachment/');
-        }
         return url;
     };
 

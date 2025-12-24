@@ -46,11 +46,6 @@ async function PropertiesContent({ page }: { page: number }) {
             ? (brosurUrl.startsWith('http') ? brosurUrl : `${STRAPI_URL}${brosurUrl}`)
             : undefined;
 
-        // Fix Cloudinary PDF URLs - add fl_attachment for download
-        if (fullBrosurUrl && fullBrosurUrl.includes('cloudinary.com') && fullBrosurUrl.toLowerCase().endsWith('.pdf')) {
-            fullBrosurUrl = fullBrosurUrl.replace('/upload/', '/upload/fl_attachment/');
-        }
-
         return {
             slug: p.slug,
             title: p.title,
