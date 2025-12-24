@@ -38,9 +38,9 @@ export default async function PropertyGrid() {
             ? (brosurUrl.startsWith('http') ? brosurUrl : `${STRAPI_URL}${brosurUrl}`)
             : undefined;
 
-        // Fix Cloudinary PDF URLs (change /image/upload/ to /raw/upload/)
+        // Fix Cloudinary PDF URLs - add fl_attachment for download
         if (fullBrosurUrl && fullBrosurUrl.includes('cloudinary.com') && fullBrosurUrl.toLowerCase().endsWith('.pdf')) {
-            fullBrosurUrl = fullBrosurUrl.replace('/image/upload/', '/raw/upload/');
+            fullBrosurUrl = fullBrosurUrl.replace('/upload/', '/upload/fl_attachment/');
         }
 
         return {

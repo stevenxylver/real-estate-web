@@ -27,12 +27,13 @@ export default async function PropertyDetailPage({ params }: PageProps) {
         return url.startsWith('http') ? url : `${STRAPI_URL}${url}`;
     };
 
-    // Helper function to fix Cloudinary PDF URLs (change /image/upload/ to /raw/upload/)
+    // Helper function to fix Cloudinary PDF URLs - add fl_attachment for download
     const fixPdfUrl = (url: string | null): string | null => {
         if (!url) return null;
-        // For Cloudinary URLs with PDF extension, change image/upload to raw/upload
+        // For Cloudinary URLs with PDF extension, add fl_attachment flag
         if (url.includes('cloudinary.com') && url.toLowerCase().endsWith('.pdf')) {
-            return url.replace('/image/upload/', '/raw/upload/');
+            // Add fl_attachment flag after /upload/ to force download
+            return url.replace('/upload/', '/upload/fl_attachment/');
         }
         return url;
     };
