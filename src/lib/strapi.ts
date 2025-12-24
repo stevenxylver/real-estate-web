@@ -296,3 +296,53 @@ export async function getContactInfo(): Promise<ContactInfo | null> {
         return null;
     }
 }
+
+// Company interface
+export interface Company {
+    name: string;
+    logo: string;
+}
+
+// Fetch company info from Strapi (Single Type)
+export async function getCompany(): Promise<Company | null> {
+    try {
+        const res = await fetch(
+            `${STRAPI_URL}/api/company?populate=logo`,
+            { cache: "no-store" }
+        );
+
+        if (!res.ok) {
+            console.error("Strapi API error:", res.status, res.statusText);
+            return null;
+        }
+
+        const json = await res.json();
+        const data = json.data;
+
+        if (!data) {
+            return null;
+        }
+
+        // Handle logo URL
+        let logoUrl = "";
+        if (data.logo) {
+            if (data.logo.url) {
+                logoUrl = data.logo.url;
+            } else if (data.logo.data?.attributes?.url) {
+                logoUrl = data.logo.data.attributes.url;
+            }
+        }
+
+        const fullLogoUrl = logoUrl
+            ? (logoUrl.startsWith('http') ? logoUrl : `${STRAPI_URL}${logoUrl}`)
+            : "";
+
+        return {
+            name: data.name || "",
+            logo: fullLogoUrl,
+        };
+    } catch (error) {
+        console.error("Failed to fetch company info:", error);
+        return null;
+    }
+}

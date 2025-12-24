@@ -245,7 +245,7 @@ export default async function PropertyDetailPage({ params }: PageProps) {
                             <p className="text-gray-600 text-sm mb-4">
                                 Starting from{" "}
                                 <span className="font-semibold text-gray-900">
-                                    Rp {property.priceStart?.toLocaleString("id-ID") || "0"}
+                                    Rp {(typeof property.priceStart === 'string' ? parseFloat(property.priceStart) : property.priceStart)?.toLocaleString("en-US") || "0"}
                                 </span>
                             </p>
 

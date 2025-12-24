@@ -8,14 +8,21 @@ interface LatestProperty {
     slug: string;
 }
 
+interface CompanyInfo {
+    name: string;
+    logo: string;
+}
+
 export default function Navbar() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [latestProperty, setLatestProperty] = useState<LatestProperty | null>(null);
+    const [company, setCompany] = useState<CompanyInfo | null>(null);
 
     useEffect(() => {
+        const strapiUrl = process.env.NEXT_PUBLIC_STRAPI_URL || "http://localhost:1337";
+
         async function fetchLatestProperty() {
             try {
-                const strapiUrl = process.env.NEXT_PUBLIC_STRAPI_URL || "http://localhost:1337";
                 const res = await fetch(
                     `${strapiUrl}/api/properties?populate=*&sort=publishedAt:desc&pagination[limit]=1`
                 );
@@ -30,16 +37,71 @@ export default function Navbar() {
                 console.error("Failed to fetch latest property:", error);
             }
         }
+
+        async function fetchCompany() {
+            try {
+                const res = await fetch(
+                    `${strapiUrl}/api/company?populate=logo`
+                );
+                const json = await res.json();
+                if (json.data) {
+                    const data = json.data;
+                    let logoUrl = "";
+                    if (data.logo) {
+                        if (data.logo.url) {
+                            logoUrl = data.logo.url;
+                        } else if (data.logo.data?.attributes?.url) {
+                            logoUrl = data.logo.data.attributes.url;
+                        }
+                    }
+                    const fullLogoUrl = logoUrl
+                        ? (logoUrl.startsWith('http') ? logoUrl : `${strapiUrl}${logoUrl}`)
+                        : "";
+                    setCompany({
+                        name: data.name || "BINTARO JAYA",
+                        logo: fullLogoUrl,
+                    });
+                }
+            } catch (error) {
+                console.error("Failed to fetch company info:", error);
+            }
+        }
+
         fetchLatestProperty();
+        fetchCompany();
     }, []);
 
     return (
         <header className="w-full bg-white">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
                 {/* Logo */}
-                <Link href="/" className="font-bold text-sm leading-tight">
-                    <span className="block">BINTARO</span>
-                    <span className="block">JAYA</span>
+                <Link href="/" className="flex items-center gap-2 font-bold text-sm leading-tight">
+                    {/* Dynamic Company Logo from Strapi */}
+                    {company?.logo ? (
+                        <img
+                            src={company.logo}
+                            alt={company.name || "Logo"}
+                            className="w-10 h-10 object-contain"
+                        />
+                    ) : (
+                        <div className="w-10 h-10 bg-gray-100 rounded flex items-center justify-center text-gray-400">
+                            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                            </svg>
+                        </div>
+                    )}
+                    <div>
+                        {company?.name ? (
+                            company.name.split(' ').map((word, index) => (
+                                <span key={index} className="block">{word}</span>
+                            ))
+                        ) : (
+                            <>
+                                <span className="block">BINTARO</span>
+                                <span className="block">JAYA</span>
+                            </>
+                        )}
+                    </div>
                 </Link>
 
                 {/* Desktop Navigation */}

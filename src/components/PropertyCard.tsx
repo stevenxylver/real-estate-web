@@ -29,9 +29,11 @@ export default function PropertyCard({
     luasbangunan,
     brosur,
 }: Props) {
-    const formatPrice = (price: number | null | undefined) => {
+    const formatPrice = (price: number | string | null | undefined) => {
         if (price == null) return "Harga belum tersedia";
-        return `Rp ${price.toLocaleString("id-ID")}`;
+        const numPrice = typeof price === 'string' ? parseFloat(price) : price;
+        if (isNaN(numPrice)) return "Harga belum tersedia";
+        return `Rp ${numPrice.toLocaleString("en-US")}`;
     };
 
     const handleWhatsAppClick = (e: React.MouseEvent) => {
