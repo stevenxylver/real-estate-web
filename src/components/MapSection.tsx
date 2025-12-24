@@ -19,7 +19,8 @@ export default function MapSection() {
             <div className="max-w-7xl mx-auto px-4 sm:px-6">
                 {/* Section Title */}
                 <h2 className="text-2xl sm:text-3xl font-bold text-black dark:text-white text-center mb-8 sm:mb-12 leading-tight">
-                    Temukan Lokasi Kami dan Hubungi Tim Kami
+                    <span className="sm:hidden">Hubungi Tim Kami</span>
+                    <span className="hidden sm:inline">Temukan Lokasi Kami dan Hubungi Tim Kami</span>
                 </h2>
 
                 <div className="flex flex-col lg:flex-row gap-6 lg:gap-4 items-center">

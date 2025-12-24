@@ -76,7 +76,8 @@ export default function Facilities() {
             <div className="max-w-7xl mx-auto px-4 sm:px-6">
                 {/* Header */}
                 <h2 className="text-2xl sm:text-3xl font-bold text-black dark:text-white text-center mb-6 sm:mb-10 md:mb-12 leading-tight">
-                    Nikmati Kemudahan Hidup Modern Dengan Fasilitas Lengkap di Sekitar Anda
+                    <span className="sm:hidden">Fasilitas Lengkap</span>
+                    <span className="hidden sm:inline">Nikmati Kemudahan Hidup Modern Dengan Fasilitas Lengkap di Sekitar Anda</span>
                 </h2>
 
                 {/* Filter Tabs - Horizontal scroll on mobile */}
