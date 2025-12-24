@@ -75,11 +75,8 @@ export default function Facilities() {
         <section className="bg-white py-10 sm:py-16 md:py-20">
             <div className="max-w-7xl mx-auto px-4 sm:px-6">
                 {/* Header */}
-                <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-black text-center mb-6 sm:mb-10 md:mb-12 leading-tight">
-                    Complete facilities for a modern and
-                    <br className="hidden sm:block" />
-                    <span className="sm:hidden"> </span>
-                    convenient lifestyle, all within reach
+                <h2 className="text-2xl sm:text-3xl font-bold text-black text-center mb-6 sm:mb-10 md:mb-12 leading-tight">
+                    Nikmati Kemudahan Hidup Modern Dengan Fasilitas Lengkap di Sekitar Anda
                 </h2>
 
                 {/* Filter Tabs - Horizontal scroll on mobile */}

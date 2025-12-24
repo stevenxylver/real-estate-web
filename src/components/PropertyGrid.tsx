@@ -63,11 +63,10 @@ export default async function PropertyGrid() {
             <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 mb-8">
                 <div className="max-w-lg">
                     <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">
-                        Explore our premier houses
+                        Temukan Hunian Impian Anda
                     </h2>
                     <p className="text-sm text-gray-500">
-                        Each listing offers unique features, exceptional quality, and prime locations,
-                        ensuring an exclusive living experience.
+                        Setiap rumah menawarkan keunggulan desain, kualitas, dan lokasi strategis yang bernilai tinggi.
                     </p>
                 </div>
                 <Link

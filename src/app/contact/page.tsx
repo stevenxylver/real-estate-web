@@ -90,12 +90,12 @@ export default function ContactPage() {
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
                         {/* Left: Form Section */}
                         <div>
-                            <span className="text-orange-500 font-medium text-sm">Get in Touch</span>
+                            <span className="text-orange-500 font-medium text-sm">Hubungi Kami</span>
                             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mt-3 mb-4">
-                                Let's Chat, Reach Out to Us
+                                Mari Berbincang, Hubungi Kami
                             </h1>
                             <p className="text-gray-500 mb-8">
-                                Have questions or feedback? We're here to help. Send us a message, and we'll respond within 24 hours
+                                Punya pertanyaan atau masukan? Tim kami siap membantu. Kirimkan pesan Anda dan kami akan merespons dalam waktu maksimal 24 jam.
                             </p>
 
                             <form onSubmit={handleSubmit} className="space-y-6">
