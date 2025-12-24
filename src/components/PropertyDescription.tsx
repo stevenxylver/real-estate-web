@@ -51,12 +51,24 @@ export default function PropertyDescription({
                     {formatText(description)}
                 </p>
                 {showSeeMore && (
-                    <button
-                        onClick={() => setIsExpanded(true)}
-                        className="text-gray-900 font-medium hover:underline text-sm mt-1"
-                    >
-                        See More
-                    </button>
+                    <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-white via-white/90 to-transparent pt-8 pb-1">
+                        <button
+                            onClick={() => setIsExpanded(true)}
+                            className="group flex items-center gap-1.5 text-blue-600 hover:text-blue-700 font-medium text-sm transition-all duration-200"
+                        >
+                            <span className="border-b border-transparent group-hover:border-blue-600 transition-all duration-200">
+                                See More
+                            </span>
+                            <svg
+                                className="w-4 h-4 transform group-hover:translate-x-0.5 transition-transform duration-200"
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
+                            >
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                            </svg>
+                        </button>
+                    </div>
                 )}
             </div>
 

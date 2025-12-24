@@ -125,7 +125,7 @@ export default function Navbar() {
 
                 {/* Desktop WhatsApp Button */}
                 <a
-                    href="https://wa.me/6281808187943"
+                    href="https://wa.me/6281808187943?text=Halo%2C%20mau%20tanya%20info%20rumah%20yang%20tersedia.%0AApakah%20masih%20ada%20unit%20dan%20promo%20saat%20ini%3F"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="hidden md:flex items-center gap-2 bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-full text-sm transition-colors"
@@ -172,9 +172,9 @@ export default function Navbar() {
                             </span>
                         )}
                         <Link href="/facilities">Facilities</Link>
-                        <Link href="#">Contact</Link>
+                        <Link href="/contact" onClick={() => setIsMenuOpen(false)}>Contact</Link>
                         <a
-                            href="https://wa.me/6281808187943"
+                            href="https://wa.me/6281808187943?text=Halo%2C%20mau%20tanya%20info%20rumah%20yang%20tersedia.%0AApakah%20masih%20ada%20unit%20dan%20promo%20saat%20ini%3F"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="flex items-center justify-center gap-2 bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-full text-sm w-full mt-2 transition-colors"

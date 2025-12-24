@@ -39,7 +39,8 @@ export default function PropertyCard({
     const handleWhatsAppClick = (e: React.MouseEvent) => {
         e.preventDefault();
         e.stopPropagation();
-        window.open(`https://wa.me/6281808187943?text=Halo, saya tertarik dengan properti ${title}`, "_blank");
+        const message = encodeURIComponent(`Halo, mau tanya info rumah yang tersedia.\nApakah masih ada unit dan promo saat ini?\n\nSaya tertarik dengan properti: ${title}`);
+        window.open(`https://wa.me/6281808187943?text=${message}`, "_blank");
     };
 
     const handleBrosurClick = (e: React.MouseEvent) => {

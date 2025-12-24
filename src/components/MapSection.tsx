@@ -83,7 +83,7 @@ export default function MapSection() {
 
                                 {/* WhatsApp Button */}
                                 <a
-                                    href={contactInfo?.nophone ? `https://wa.me/${contactInfo.nophone.replace(/\D/g, '')}` : "https://wa.me/6281808187943"}
+                                    href={contactInfo?.nophone ? `https://wa.me/${contactInfo.nophone.replace(/\D/g, '')}?text=Halo%2C%20mau%20tanya%20info%20rumah%20yang%20tersedia.%0AApakah%20masih%20ada%20unit%20dan%20promo%20saat%20ini%3F` : "https://wa.me/6281808187943?text=Halo%2C%20mau%20tanya%20info%20rumah%20yang%20tersedia.%0AApakah%20masih%20ada%20unit%20dan%20promo%20saat%20ini%3F"}
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="bg-green-500 hover:bg-green-600 text-white p-3 rounded-xl transition-colors"
