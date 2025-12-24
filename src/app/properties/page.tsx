@@ -95,7 +95,7 @@ async function PropertiesContent({ page }: { page: number }) {
             </Suspense>
 
             {/* Results Info */}
-            <div className="text-center mt-6 text-sm text-gray-500">
+            <div className="text-center mt-6 text-sm text-gray-500 dark:text-gray-400">
                 Showing {properties.length} of {pagination.total} properties
             </div>
         </>
@@ -114,10 +114,10 @@ export default async function PropertiesPage({ searchParams }: PageProps) {
                 {/* Header */}
                 <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 mb-8">
                     <div className="max-w-lg">
-                        <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">
+                        <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mb-2">
                             Temukan Hunian Impian Anda
                         </h2>
-                        <p className="text-sm text-gray-500">
+                        <p className="text-sm text-gray-500 dark:text-gray-400">
                             Setiap rumah menawarkan keunggulan desain, kualitas, dan lokasi strategis yang bernilai tinggi.
                         </p>
                     </div>
@@ -125,7 +125,7 @@ export default async function PropertiesPage({ searchParams }: PageProps) {
 
                 <Suspense fallback={
                     <div className="flex justify-center items-center py-20">
-                        <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-gray-900"></div>
+                        <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-gray-900 dark:border-white"></div>
                     </div>
                 }>
                     <PropertiesContent page={currentPage} />

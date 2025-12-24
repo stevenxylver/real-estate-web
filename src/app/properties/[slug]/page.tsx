@@ -77,10 +77,10 @@ export default async function PropertyDetailPage({ params }: PageProps) {
                         {/* Title & Location */}
                         <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3">
                             <div className="flex-1 min-w-0">
-                                <h1 className="text-xl sm:text-2xl font-bold text-gray-900">
+                                <h1 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white">
                                     {property.title}
                                 </h1>
-                                <div className="flex items-start gap-2 mt-2 text-gray-500">
+                                <div className="flex items-start gap-2 mt-2 text-gray-500 dark:text-gray-400">
                                     <svg
                                         className="w-4 h-4 flex-shrink-0 mt-0.5"
                                         fill="none"
@@ -114,7 +114,7 @@ export default async function PropertyDetailPage({ params }: PageProps) {
                                 </a>
                             ) : (
                                 <button
-                                    className="self-start px-4 sm:px-5 py-2 sm:py-2.5 bg-gray-100 hover:bg-gray-200 text-gray-800 rounded-full text-sm font-medium transition-colors opacity-50 cursor-not-allowed whitespace-nowrap"
+                                    className="self-start px-4 sm:px-5 py-2 sm:py-2.5 bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-800 dark:text-gray-300 rounded-full text-sm font-medium transition-colors opacity-50 cursor-not-allowed whitespace-nowrap"
                                     disabled
                                 >
                                     Virtual Room
@@ -123,12 +123,12 @@ export default async function PropertyDetailPage({ params }: PageProps) {
                         </div>
 
                         {/* Property Stats */}
-                        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 py-6 border-y border-gray-200">
+                        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 py-6 border-y border-gray-200 dark:border-gray-700">
                             {/* Bedroom */}
                             <div className="text-center">
                                 <div className="flex justify-center mb-2">
                                     <svg
-                                        className="w-5 h-5 sm:w-6 sm:h-6 text-gray-400"
+                                        className="w-5 h-5 sm:w-6 sm:h-6 text-gray-400 dark:text-gray-500"
                                         fill="none"
                                         stroke="currentColor"
                                         viewBox="0 0 24 24"
@@ -141,8 +141,8 @@ export default async function PropertyDetailPage({ params }: PageProps) {
                                         />
                                     </svg>
                                 </div>
-                                <p className="text-xs text-gray-500 mb-1">Bedroom</p>
-                                <p className="text-base sm:text-lg font-semibold text-gray-900">
+                                <p className="text-xs text-gray-500 dark:text-gray-400 mb-1">Bedroom</p>
+                                <p className="text-base sm:text-lg font-semibold text-gray-900 dark:text-white">
                                     {property.bedrooms || 2}
                                 </p>
                             </div>
@@ -163,8 +163,8 @@ export default async function PropertyDetailPage({ params }: PageProps) {
                                         />
                                     </svg>
                                 </div>
-                                <p className="text-xs text-gray-500 mb-1">Bathroom</p>
-                                <p className="text-base sm:text-lg font-semibold text-gray-900">
+                                <p className="text-xs text-gray-500 dark:text-gray-400 mb-1">Bathroom</p>
+                                <p className="text-base sm:text-lg font-semibold text-gray-900 dark:text-white">
                                     {property.bathrooms || 2}
                                 </p>
                             </div>
@@ -185,8 +185,8 @@ export default async function PropertyDetailPage({ params }: PageProps) {
                                         />
                                     </svg>
                                 </div>
-                                <p className="text-xs text-gray-500 mb-1">Luas Tanah</p>
-                                <p className="text-base sm:text-lg font-semibold text-gray-900">
+                                <p className="text-xs text-gray-500 dark:text-gray-400 mb-1">Luas Tanah</p>
+                                <p className="text-base sm:text-lg font-semibold text-gray-900 dark:text-white">
                                     {property.luastanah || 0} m²
                                 </p>
                             </div>
@@ -207,19 +207,19 @@ export default async function PropertyDetailPage({ params }: PageProps) {
                                         />
                                     </svg>
                                 </div>
-                                <p className="text-xs text-gray-500 mb-1">Luas Bangunan</p>
-                                <p className="text-base sm:text-lg font-semibold text-gray-900">{property.luasbangunan || 0} m²</p>
+                                <p className="text-xs text-gray-500 dark:text-gray-400 mb-1">Luas Bangunan</p>
+                                <p className="text-base sm:text-lg font-semibold text-gray-900 dark:text-white">{property.luasbangunan || 0} m²</p>
                             </div>
                         </div>
 
                         {/* Property Details */}
                         <div>
                             <div className="flex items-center justify-between mb-3">
-                                <h2 className="text-lg font-semibold text-gray-900">
+                                <h2 className="text-lg font-semibold text-gray-900 dark:text-white">
                                     Property details
                                 </h2>
                                 <svg
-                                    className="w-5 h-5 text-gray-400"
+                                    className="w-5 h-5 text-gray-400 dark:text-gray-500"
                                     fill="none"
                                     stroke="currentColor"
                                     viewBox="0 0 24 24"
@@ -241,16 +241,16 @@ export default async function PropertyDetailPage({ params }: PageProps) {
                         {/* Price Section */}
                         <div className="bg-[#f5ebe0] rounded-2xl p-6">
                             <div className="flex items-center justify-between mb-1">
-                                <h3 className="text-lg font-bold text-gray-900">
+                                <h3 className="text-lg font-bold text-gray-900 dark:text-white">
                                     Price
                                 </h3>
-                                <span className="text-sm text-gray-600">
-                                    Total: <span className="font-semibold text-gray-900">{property.totalunit || 0}</span> units
+                                <span className="text-sm text-gray-600 dark:text-gray-400">
+                                    Total: <span className="font-semibold text-gray-900 dark:text-white">{property.totalunit || 0}</span> units
                                 </span>
                             </div>
-                            <p className="text-gray-600 text-sm mb-4">
+                            <p className="text-gray-600 dark:text-gray-400 text-sm mb-4">
                                 Starting from{" "}
-                                <span className="font-semibold text-gray-900">
+                                <span className="font-semibold text-gray-900 dark:text-white">
                                     Rp {(typeof property.priceStart === 'string' ? parseFloat(property.priceStart) : property.priceStart)?.toLocaleString("en-US") || "0"}
                                 </span>
                             </p>
@@ -264,17 +264,17 @@ export default async function PropertyDetailPage({ params }: PageProps) {
 
                                 return (
                                     <div className="space-y-2">
-                                        <div className="h-2 bg-white rounded-full overflow-hidden">
+                                        <div className="h-2 bg-white dark:bg-gray-700 rounded-full overflow-hidden">
                                             <div
                                                 className="h-full bg-gradient-to-r from-orange-300 to-orange-400 rounded-full"
                                                 style={{ width: `${soldPercent}%` }}
                                             />
                                         </div>
                                         <div className="flex justify-between text-sm">
-                                            <span className="text-gray-500">
-                                                {unitLeft} <span className="text-gray-400">units left</span>
+                                            <span className="text-gray-500 dark:text-gray-400">
+                                                {unitLeft} <span className="text-gray-400 dark:text-gray-500">units left</span>
                                             </span>
-                                            <span className="font-medium text-gray-700">{soldPercent}%</span>
+                                            <span className="font-medium text-gray-700 dark:text-gray-300">{soldPercent}%</span>
                                         </div>
                                     </div>
                                 );
@@ -292,7 +292,7 @@ export default async function PropertyDetailPage({ params }: PageProps) {
                                 >
                                     {property.status_sale || "For Sale"}
                                 </span>
-                                <span className="px-3 sm:px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-xs sm:text-sm font-medium">
+                                <span className="px-3 sm:px-4 py-2 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-full text-xs sm:text-sm font-medium">
                                     {property.category}
                                 </span>
 
@@ -313,7 +313,7 @@ export default async function PropertyDetailPage({ params }: PageProps) {
                                 ) : (
                                     <button
                                         disabled
-                                        className="flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-2 bg-gray-200 text-gray-400 rounded-full text-xs sm:text-sm font-medium cursor-not-allowed"
+                                        className="flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-2 bg-gray-200 dark:bg-gray-700 text-gray-400 dark:text-gray-500 rounded-full text-xs sm:text-sm font-medium cursor-not-allowed"
                                     >
                                         <svg className="w-3.5 h-3.5 sm:w-4 sm:h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />

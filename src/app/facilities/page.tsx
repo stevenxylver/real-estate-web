@@ -6,7 +6,7 @@ export default function FacilitiesPage() {
     return (
         <>
             <Navbar />
-            <main className="min-h-screen bg-white">
+            <main className="min-h-screen bg-white dark:bg-gray-900 transition-colors duration-300">
                 <Facilities />
             </main>
             <Footer />

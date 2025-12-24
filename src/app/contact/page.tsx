@@ -85,16 +85,16 @@ export default function ContactPage() {
     return (
         <>
             <Navbar />
-            <main className="min-h-screen bg-white">
+            <main className="min-h-screen bg-white dark:bg-gray-900 transition-colors duration-300">
                 <section className="max-w-7xl mx-auto px-4 sm:px-6 py-12 lg:py-20">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
                         {/* Left: Form Section */}
                         <div>
                             <span className="text-orange-500 font-medium text-sm">Hubungi Kami</span>
-                            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mt-3 mb-4">
+                            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mt-3 mb-4">
                                 Mari Berbincang, Hubungi Kami
                             </h1>
-                            <p className="text-gray-500 mb-8">
+                            <p className="text-gray-500 dark:text-gray-400 mb-8">
                                 Punya pertanyaan atau masukan? Tim kami siap membantu. Kirimkan pesan Anda dan kami akan merespons dalam waktu maksimal 24 jam.
                             </p>
 
@@ -102,7 +102,7 @@ export default function ContactPage() {
                                 {/* Name Fields */}
                                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                     <div>
-                                        <label className="block text-sm font-medium text-gray-700 mb-2">
+                                        <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                                             First Name
                                         </label>
                                         <input
@@ -112,11 +112,11 @@ export default function ContactPage() {
                                             onChange={handleChange}
                                             placeholder="First name"
                                             required
-                                            className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent bg-gray-50"
+                                            className="w-full px-4 py-3 border border-gray-200 dark:border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500"
                                         />
                                     </div>
                                     <div>
-                                        <label className="block text-sm font-medium text-gray-700 mb-2">
+                                        <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                                             Last Name
                                         </label>
                                         <input
@@ -126,14 +126,14 @@ export default function ContactPage() {
                                             onChange={handleChange}
                                             placeholder="Last name"
                                             required
-                                            className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent bg-gray-50"
+                                            className="w-full px-4 py-3 border border-gray-200 dark:border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500"
                                         />
                                     </div>
                                 </div>
 
                                 {/* Email */}
                                 <div>
-                                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                                    <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                                         Email Address
                                     </label>
                                     <input
@@ -143,13 +143,13 @@ export default function ContactPage() {
                                         onChange={handleChange}
                                         placeholder="Email address"
                                         required
-                                        className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent bg-gray-50"
+                                        className="w-full px-4 py-3 border border-gray-200 dark:border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500"
                                     />
                                 </div>
 
                                 {/* Message */}
                                 <div>
-                                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                                    <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                                         Message
                                     </label>
                                     <textarea
@@ -159,7 +159,7 @@ export default function ContactPage() {
                                         placeholder="Leave us message"
                                         required
                                         rows={5}
-                                        className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent bg-gray-50 resize-none"
+                                        className="w-full px-4 py-3 border border-gray-200 dark:border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500 resize-none"
                                     />
                                 </div>
 
@@ -170,11 +170,11 @@ export default function ContactPage() {
                                         name="agreePolicy"
                                         checked={formData.agreePolicy}
                                         onChange={handleChange}
-                                        className="w-5 h-5 mt-0.5 rounded border-gray-300 text-orange-500 focus:ring-orange-500"
+                                        className="w-5 h-5 mt-0.5 rounded border-gray-300 dark:border-gray-600 text-orange-500 focus:ring-orange-500 bg-white dark:bg-gray-800"
                                     />
-                                    <label className="text-sm text-gray-600">
+                                    <label className="text-sm text-gray-600 dark:text-gray-400">
                                         I agree to our friendly{" "}
-                                        <a href="#" className="text-gray-900 underline hover:text-orange-500">
+                                        <a href="#" className="text-gray-900 dark:text-white underline hover:text-orange-500 dark:hover:text-orange-400">
                                             privacy policy
                                         </a>
                                     </label>
@@ -184,22 +184,22 @@ export default function ContactPage() {
                                 <button
                                     type="submit"
                                     disabled={isSubmitting}
-                                    className="w-full py-4 bg-gray-900 hover:bg-gray-800 text-white font-semibold rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                                    className="w-full py-4 bg-gray-900 dark:bg-white hover:bg-gray-800 dark:hover:bg-gray-100 text-white dark:text-black font-semibold rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                                 >
                                     {isSubmitting ? "Sending..." : "Send Message"}
                                 </button>
 
                                 {/* Status Messages */}
                                 {submitStatus === "success" && (
-                                    <div className="p-4 bg-green-50 border border-green-200 rounded-lg">
-                                        <p className="text-green-700 text-sm font-medium">
+                                    <div className="p-4 bg-green-50 dark:bg-green-900/30 border border-green-200 dark:border-green-800 rounded-lg">
+                                        <p className="text-green-700 dark:text-green-400 text-sm font-medium">
                                             ✓ Message sent successfully! We'll get back to you soon.
                                         </p>
                                     </div>
                                 )}
                                 {submitStatus === "error" && (
-                                    <div className="p-4 bg-red-50 border border-red-200 rounded-lg">
-                                        <p className="text-red-700 text-sm font-medium">
+                                    <div className="p-4 bg-red-50 dark:bg-red-900/30 border border-red-200 dark:border-red-800 rounded-lg">
+                                        <p className="text-red-700 dark:text-red-400 text-sm font-medium">
                                             ✕ Failed to send message. Please try again later.
                                         </p>
                                     </div>
@@ -210,9 +210,9 @@ export default function ContactPage() {
                         {/* Right: Image & Contact Info */}
                         <div className="space-y-6">
                             {/* Profile Card */}
-                            <div className="bg-white border border-gray-100 rounded-2xl overflow-hidden shadow-sm">
+                            <div className="bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700 rounded-2xl overflow-hidden shadow-sm">
                                 {/* Profile Image */}
-                                <div className="aspect-square bg-gray-100">
+                                <div className="aspect-square bg-gray-100 dark:bg-gray-700">
                                     {contactInfo?.image ? (
                                         <img
                                             src={contactInfo.image}
@@ -220,19 +220,19 @@ export default function ContactPage() {
                                             className="w-full h-full object-cover"
                                         />
                                     ) : (
-                                        <div className="w-full h-full bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center">
-                                            <svg className="w-24 h-24 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <div className="w-full h-full bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-700 dark:to-gray-600 flex items-center justify-center">
+                                            <svg className="w-24 h-24 text-gray-300 dark:text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                                             </svg>
                                         </div>
                                     )}
                                 </div>
                                 {/* Name & Title */}
-                                <div className="p-4 text-center border-t border-gray-100">
-                                    <h3 className="font-bold text-gray-900 text-lg">
+                                <div className="p-4 text-center border-t border-gray-100 dark:border-gray-700">
+                                    <h3 className="font-bold text-gray-900 dark:text-white text-lg">
                                         {contactInfo?.name || "Contact Person"}
                                     </h3>
-                                    <p className="text-sm text-gray-500 mt-1">
+                                    <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
                                         {contactInfo?.title || "Sales Manager"}
                                     </p>
                                 </div>
@@ -243,17 +243,17 @@ export default function ContactPage() {
                                 {/* Email Card */}
                                 <a
                                     href={contactInfo?.email ? `mailto:${contactInfo.email}` : "#"}
-                                    className="bg-white border border-gray-100 rounded-2xl p-5 shadow-sm hover:shadow-md transition-shadow"
+                                    className="bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700 rounded-2xl p-5 shadow-sm hover:shadow-md transition-shadow"
                                 >
                                     <div className="flex items-center gap-4">
-                                        <div className="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center">
-                                            <svg className="w-6 h-6 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <div className="w-12 h-12 bg-blue-50 dark:bg-blue-900/30 rounded-xl flex items-center justify-center">
+                                            <svg className="w-6 h-6 text-blue-500 dark:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                                             </svg>
                                         </div>
                                         <div>
-                                            <h3 className="font-semibold text-gray-900">Email</h3>
-                                            <p className="text-sm text-gray-500">{contactInfo?.email || "info@bintarojaya.com"}</p>
+                                            <h3 className="font-semibold text-gray-900 dark:text-white">Email</h3>
+                                            <p className="text-sm text-gray-500 dark:text-gray-400">{contactInfo?.email || "info@bintarojaya.com"}</p>
                                         </div>
                                     </div>
                                 </a>
@@ -261,17 +261,17 @@ export default function ContactPage() {
                                 {/* Phone Card */}
                                 <a
                                     href={contactInfo?.nophone ? `tel:${contactInfo.nophone}` : "#"}
-                                    className="bg-white border border-gray-100 rounded-2xl p-5 shadow-sm hover:shadow-md transition-shadow"
+                                    className="bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700 rounded-2xl p-5 shadow-sm hover:shadow-md transition-shadow"
                                 >
                                     <div className="flex items-center gap-4">
-                                        <div className="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center">
-                                            <svg className="w-6 h-6 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <div className="w-12 h-12 bg-blue-50 dark:bg-blue-900/30 rounded-xl flex items-center justify-center">
+                                            <svg className="w-6 h-6 text-blue-500 dark:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                                             </svg>
                                         </div>
                                         <div>
-                                            <h3 className="font-semibold text-gray-900">Phone</h3>
-                                            <p className="text-sm text-gray-500">{contactInfo?.nophone || "(021) 8324 9231"}</p>
+                                            <h3 className="font-semibold text-gray-900 dark:text-white">Phone</h3>
+                                            <p className="text-sm text-gray-500 dark:text-gray-400">{contactInfo?.nophone || "(021) 8324 9231"}</p>
                                         </div>
                                     </div>
                                 </a>
@@ -281,17 +281,17 @@ export default function ContactPage() {
                                     href={contactInfo?.linkedin || "#"}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="bg-white border border-gray-100 rounded-2xl p-5 shadow-sm hover:shadow-md transition-shadow"
+                                    className="bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700 rounded-2xl p-5 shadow-sm hover:shadow-md transition-shadow"
                                 >
                                     <div className="flex items-center gap-4">
-                                        <div className="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center">
-                                            <svg className="w-6 h-6 text-blue-600" fill="currentColor" viewBox="0 0 24 24">
+                                        <div className="w-12 h-12 bg-blue-50 dark:bg-blue-900/30 rounded-xl flex items-center justify-center">
+                                            <svg className="w-6 h-6 text-blue-600 dark:text-blue-400" fill="currentColor" viewBox="0 0 24 24">
                                                 <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
                                             </svg>
                                         </div>
                                         <div>
-                                            <h3 className="font-semibold text-gray-900">LinkedIn</h3>
-                                            <p className="text-sm text-gray-500">Connect with us</p>
+                                            <h3 className="font-semibold text-gray-900 dark:text-white">LinkedIn</h3>
+                                            <p className="text-sm text-gray-500 dark:text-gray-400">Connect with us</p>
                                         </div>
                                     </div>
                                 </a>
@@ -301,7 +301,7 @@ export default function ContactPage() {
                                     href={contactInfo?.instagram || "#"}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="bg-white border border-gray-100 rounded-2xl p-5 shadow-sm hover:shadow-md transition-shadow"
+                                    className="bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700 rounded-2xl p-5 shadow-sm hover:shadow-md transition-shadow"
                                 >
                                     <div className="flex items-center gap-4">
                                         <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl flex items-center justify-center">
@@ -310,8 +310,8 @@ export default function ContactPage() {
                                             </svg>
                                         </div>
                                         <div>
-                                            <h3 className="font-semibold text-gray-900">Instagram</h3>
-                                            <p className="text-sm text-gray-500">Follow us</p>
+                                            <h3 className="font-semibold text-gray-900 dark:text-white">Instagram</h3>
+                                            <p className="text-sm text-gray-500 dark:text-gray-400">Follow us</p>
                                         </div>
                                     </div>
                                 </a>

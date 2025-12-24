@@ -20,17 +20,17 @@ export default function Footer() {
     };
 
     return (
-        <footer className="bg-white border-t border-gray-200">
+        <footer className="bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800 transition-colors duration-300">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8">
                 {/* Row 1: Logo & Scroll to Top */}
                 <div className="flex justify-between items-start mb-4">
 
                     <button
                         onClick={scrollToTop}
-                        className="w-10 h-10 border border-gray-300 rounded-full flex items-center justify-center hover:bg-gray-100 transition-colors"
+                        className="w-10 h-10 border border-gray-300 dark:border-gray-600 rounded-full flex items-center justify-center hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
                         aria-label="Scroll to top"
                     >
-                        <svg className="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg className="w-5 h-5 text-gray-600 dark:text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 10l7-7m0 0l7 7m-7-7v18" />
                         </svg>
                     </button>
@@ -38,17 +38,17 @@ export default function Footer() {
 
                 {/* Row 2: Main Navigation */}
                 <nav className="flex gap-6 text-sm justify-center mb-6">
-                    <Link href="/" className="text-blue-600 hover:text-blue-800 transition-colors">
+                    <Link href="/" className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 transition-colors">
                         Home
                     </Link>
 
-                    <Link href="/properties" className="text-gray-700 hover:text-gray-900 transition-colors">
+                    <Link href="/properties" className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">
                         Projects
                     </Link>
-                    <Link href="/facilities" className="text-gray-700 hover:text-gray-900 transition-colors">
+                    <Link href="/facilities" className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">
                         Services
                     </Link>
-                    <Link href="/contact" className="text-gray-700 hover:text-gray-900 transition-colors">
+                    <Link href="/contact" className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">
                         Contact
                     </Link>
                 </nav>
@@ -60,7 +60,7 @@ export default function Footer() {
                         href={contactInfo?.linkedin || "#"}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-gray-700 hover:text-blue-600 transition-colors"
+                        className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
                         aria-label="LinkedIn"
                     >
                         <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -71,7 +71,7 @@ export default function Footer() {
                     {/* Email */}
                     <a
                         href={contactInfo?.email ? `mailto:${contactInfo.email}` : "mailto:info@bintarojaya.com"}
-                        className="text-gray-700 hover:text-red-500 transition-colors"
+                        className="text-gray-700 dark:text-gray-300 hover:text-red-500 dark:hover:text-red-400 transition-colors"
                         aria-label="Email"
                     >
                         <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -84,7 +84,7 @@ export default function Footer() {
                         href={contactInfo?.instagram || "#"}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-gray-700 hover:text-pink-500 transition-colors"
+                        className="text-gray-700 dark:text-gray-300 hover:text-pink-500 dark:hover:text-pink-400 transition-colors"
                         aria-label="Instagram"
                     >
                         <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -94,7 +94,7 @@ export default function Footer() {
                 </div>
 
                 {/* Copyright */}
-                <div className="text-center mt-6 text-sm text-gray-400">
+                <div className="text-center mt-6 text-sm text-gray-400 dark:text-gray-500">
                     © {new Date().getFullYear()} Bintaro Jaya. All rights reserved.
                 </div>
             </div>

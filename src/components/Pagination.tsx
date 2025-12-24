@@ -63,8 +63,8 @@ export default function Pagination({ currentPage, totalPages, basePath = "/prope
             <Link
                 href={createPageURL(currentPage - 1)}
                 className={`flex items-center justify-center w-10 h-10 rounded-lg border transition-all duration-200 ${currentPage === 1
-                        ? "pointer-events-none opacity-50 border-gray-200 text-gray-400"
-                        : "border-gray-300 text-gray-700 hover:bg-gray-100 hover:border-gray-400"
+                    ? "pointer-events-none opacity-50 border-gray-200 dark:border-gray-700 text-gray-400 dark:text-gray-600"
+                    : "border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 hover:border-gray-400 dark:hover:border-gray-500"
                     }`}
                 aria-disabled={currentPage === 1}
                 tabIndex={currentPage === 1 ? -1 : 0}
@@ -81,8 +81,8 @@ export default function Pagination({ currentPage, totalPages, basePath = "/prope
                         key={index}
                         href={createPageURL(page)}
                         className={`flex items-center justify-center w-10 h-10 rounded-lg border font-medium transition-all duration-200 ${currentPage === page
-                                ? "bg-gray-900 text-white border-gray-900"
-                                : "border-gray-300 text-gray-700 hover:bg-gray-100 hover:border-gray-400"
+                            ? "bg-gray-900 dark:bg-white text-white dark:text-black border-gray-900 dark:border-white"
+                            : "border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 hover:border-gray-400 dark:hover:border-gray-500"
                             }`}
                         aria-current={currentPage === page ? "page" : undefined}
                     >
@@ -91,7 +91,7 @@ export default function Pagination({ currentPage, totalPages, basePath = "/prope
                 ) : (
                     <span
                         key={index}
-                        className="flex items-center justify-center w-10 h-10 text-gray-500"
+                        className="flex items-center justify-center w-10 h-10 text-gray-500 dark:text-gray-400"
                     >
                         {page}
                     </span>
@@ -102,8 +102,8 @@ export default function Pagination({ currentPage, totalPages, basePath = "/prope
             <Link
                 href={createPageURL(currentPage + 1)}
                 className={`flex items-center justify-center w-10 h-10 rounded-lg border transition-all duration-200 ${currentPage === totalPages
-                        ? "pointer-events-none opacity-50 border-gray-200 text-gray-400"
-                        : "border-gray-300 text-gray-700 hover:bg-gray-100 hover:border-gray-400"
+                    ? "pointer-events-none opacity-50 border-gray-200 dark:border-gray-700 text-gray-400 dark:text-gray-600"
+                    : "border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 hover:border-gray-400 dark:hover:border-gray-500"
                     }`}
                 aria-disabled={currentPage === totalPages}
                 tabIndex={currentPage === totalPages ? -1 : 0}

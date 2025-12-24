@@ -44,7 +44,7 @@ export default function ImageGallery({
             <div className="space-y-4">
                 {/* Main Image */}
                 <div
-                    className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-gray-200 cursor-pointer"
+                    className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-gray-200 dark:bg-gray-700 cursor-pointer"
                     onClick={() => openModal(0)}
                 >
                     {mainImage ? (
@@ -54,7 +54,7 @@ export default function ImageGallery({
                             className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                         />
                     ) : (
-                        <div className="w-full h-full flex items-center justify-center text-gray-400">
+                        <div className="w-full h-full flex items-center justify-center text-gray-400 dark:text-gray-500">
                             <svg
                                 className="w-16 h-16"
                                 fill="none"
@@ -71,13 +71,13 @@ export default function ImageGallery({
                         </div>
                     )}
                     {/* Image Counter Badge */}
-                    <div className="absolute top-4 right-4 bg-white/80 backdrop-blur-sm px-3 py-1 rounded-full text-sm font-medium text-gray-700">
+                    <div className="absolute top-4 right-4 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm px-3 py-1 rounded-full text-sm font-medium text-gray-700 dark:text-gray-300">
                         1 / {allImages.length || 1}
                     </div>
                     {/* Zoom Icon */}
-                    <div className="absolute bottom-4 right-4 bg-white/80 backdrop-blur-sm p-2 rounded-full">
+                    <div className="absolute bottom-4 right-4 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm p-2 rounded-full">
                         <svg
-                            className="w-5 h-5 text-gray-700"
+                            className="w-5 h-5 text-gray-700 dark:text-gray-300"
                             fill="none"
                             stroke="currentColor"
                             viewBox="0 0 24 24"
@@ -98,7 +98,7 @@ export default function ImageGallery({
                         thumbnailImages.map((imgSrc, i) => (
                             <div
                                 key={i}
-                                className="relative aspect-square rounded-xl overflow-hidden bg-gray-200 cursor-pointer hover:opacity-80 transition-opacity"
+                                className="relative aspect-square rounded-xl overflow-hidden bg-gray-200 dark:bg-gray-700 cursor-pointer hover:opacity-80 transition-opacity"
                                 onClick={() => openModal(i + 1)}
                             >
                                 <img
@@ -112,9 +112,9 @@ export default function ImageGallery({
                         [1, 2, 3, 4].map((i) => (
                             <div
                                 key={i}
-                                className="relative aspect-square rounded-xl overflow-hidden bg-gray-200"
+                                className="relative aspect-square rounded-xl overflow-hidden bg-gray-200 dark:bg-gray-700"
                             >
-                                <div className="w-full h-full flex items-center justify-center text-gray-400">
+                                <div className="w-full h-full flex items-center justify-center text-gray-400 dark:text-gray-500">
                                     <svg
                                         className="w-6 h-6"
                                         fill="none"

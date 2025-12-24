@@ -65,16 +65,16 @@ export default async function PropertyGrid() {
             {/* Header */}
             <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 mb-8">
                 <div className="max-w-lg">
-                    <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">
+                    <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mb-2">
                         Temukan Hunian Impian Anda
                     </h2>
-                    <p className="text-sm text-gray-500">
+                    <p className="text-sm text-gray-500 dark:text-gray-400">
                         Setiap rumah menawarkan keunggulan desain, kualitas, dan lokasi strategis yang bernilai tinggi.
                     </p>
                 </div>
                 <Link
                     href="/properties"
-                    className="flex items-center gap-2 border border-gray-300 px-4 py-2 rounded-full text-sm hover:bg-gray-50 whitespace-nowrap self-start"
+                    className="flex items-center gap-2 border border-gray-300 dark:border-gray-600 px-4 py-2 rounded-full text-sm hover:bg-gray-50 dark:hover:bg-gray-800 whitespace-nowrap self-start text-gray-700 dark:text-gray-300 transition-colors"
                 >
                     See All Properties
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">

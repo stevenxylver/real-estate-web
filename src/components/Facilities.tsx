@@ -72,10 +72,10 @@ export default function Facilities() {
     const paginatedFacilities = filteredfacilities.slice(startIndex, startIndex + itemsPerPage);
 
     return (
-        <section className="bg-white py-10 sm:py-16 md:py-20">
+        <section className="bg-white dark:bg-gray-900 py-10 sm:py-16 md:py-20 transition-colors duration-300">
             <div className="max-w-7xl mx-auto px-4 sm:px-6">
                 {/* Header */}
-                <h2 className="text-2xl sm:text-3xl font-bold text-black text-center mb-6 sm:mb-10 md:mb-12 leading-tight">
+                <h2 className="text-2xl sm:text-3xl font-bold text-black dark:text-white text-center mb-6 sm:mb-10 md:mb-12 leading-tight">
                     Nikmati Kemudahan Hidup Modern Dengan Fasilitas Lengkap di Sekitar Anda
                 </h2>
 
@@ -88,8 +88,8 @@ export default function Facilities() {
                                     key={category}
                                     onClick={() => handleCategoryChange(category)}
                                     className={`px-3 sm:px-5 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm font-medium transition-colors whitespace-nowrap flex-shrink-0 ${activeCategory === category
-                                        ? "bg-black text-white"
-                                        : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+                                        ? "bg-black dark:bg-white text-white dark:text-black"
+                                        : "bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700"
                                         }`}
                                 >
                                     {category}
@@ -114,15 +114,15 @@ export default function Facilities() {
                                 </div>
 
                                 {/* Content */}
-                                <h3 className="text-base font-bold text-black mb-1.5">
+                                <h3 className="text-base font-bold text-black dark:text-white mb-1.5">
                                     {facility.name}
                                 </h3>
-                                <p className="text-gray-500 text-xs leading-relaxed mb-3 line-clamp-2">
+                                <p className="text-gray-500 dark:text-gray-400 text-xs leading-relaxed mb-3 line-clamp-2">
                                     {facility.description}
                                 </p>
 
                                 {/* Footer - Stacked on mobile */}
-                                <div className="flex items-center gap-3 text-xs text-gray-500">
+                                <div className="flex items-center gap-3 text-xs text-gray-500 dark:text-gray-400">
                                     <span className="inline-flex items-center gap-1">
                                         <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                                             <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
@@ -157,15 +157,15 @@ export default function Facilities() {
                             </div>
 
                             {/* Content */}
-                            <h3 className="text-lg md:text-xl font-bold text-black mb-2">
+                            <h3 className="text-lg md:text-xl font-bold text-black dark:text-white mb-2">
                                 {facility.name}
                             </h3>
-                            <p className="text-gray-500 text-sm leading-relaxed mb-4 line-clamp-3">
+                            <p className="text-gray-500 dark:text-gray-400 text-sm leading-relaxed mb-4 line-clamp-3">
                                 {facility.description}
                             </p>
 
                             {/* Footer */}
-                            <div className="flex items-center gap-4 text-sm text-gray-500">
+                            <div className="flex items-center gap-4 text-sm text-gray-500 dark:text-gray-400">
                                 <span className="inline-flex items-center gap-1.5">
                                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                                         <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
@@ -193,8 +193,8 @@ export default function Facilities() {
                             onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))}
                             disabled={currentPage === 1}
                             className={`flex items-center justify-center w-10 h-10 rounded-lg border transition-all duration-200 ${currentPage === 1
-                                ? "opacity-50 border-gray-200 text-gray-400 cursor-not-allowed"
-                                : "border-gray-300 text-gray-700 hover:bg-gray-100 hover:border-gray-400"
+                                ? "opacity-50 border-gray-200 dark:border-gray-700 text-gray-400 dark:text-gray-600 cursor-not-allowed"
+                                : "border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 hover:border-gray-400 dark:hover:border-gray-500"
                                 }`}
                         >
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
@@ -208,8 +208,8 @@ export default function Facilities() {
                                 key={page}
                                 onClick={() => setCurrentPage(page)}
                                 className={`flex items-center justify-center w-10 h-10 rounded-lg border font-medium transition-all duration-200 ${currentPage === page
-                                    ? "bg-gray-900 text-white border-gray-900"
-                                    : "border-gray-300 text-gray-700 hover:bg-gray-100 hover:border-gray-400"
+                                    ? "bg-gray-900 dark:bg-white text-white dark:text-black border-gray-900 dark:border-white"
+                                    : "border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 hover:border-gray-400 dark:hover:border-gray-500"
                                     }`}
                             >
                                 {page}
@@ -221,8 +221,8 @@ export default function Facilities() {
                             onClick={() => setCurrentPage(prev => Math.min(prev + 1, totalPages))}
                             disabled={currentPage === totalPages}
                             className={`flex items-center justify-center w-10 h-10 rounded-lg border transition-all duration-200 ${currentPage === totalPages
-                                ? "opacity-50 border-gray-200 text-gray-400 cursor-not-allowed"
-                                : "border-gray-300 text-gray-700 hover:bg-gray-100 hover:border-gray-400"
+                                ? "opacity-50 border-gray-200 dark:border-gray-700 text-gray-400 dark:text-gray-600 cursor-not-allowed"
+                                : "border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 hover:border-gray-400 dark:hover:border-gray-500"
                                 }`}
                         >
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">

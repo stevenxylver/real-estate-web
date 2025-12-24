@@ -15,10 +15,10 @@ export default function MapSection() {
     }, []);
 
     return (
-        <section className="bg-gray-50 py-12 sm:py-16 md:py-20">
+        <section className="bg-gray-50 dark:bg-gray-800 py-12 sm:py-16 md:py-20 transition-colors duration-300">
             <div className="max-w-7xl mx-auto px-4 sm:px-6">
                 {/* Section Title */}
-                <h2 className="text-2xl sm:text-3xl font-bold text-black text-center mb-8 sm:mb-12 leading-tight">
+                <h2 className="text-2xl sm:text-3xl font-bold text-black dark:text-white text-center mb-8 sm:mb-12 leading-tight">
                     Temukan Lokasi Kami dan Hubungi Tim Kami
                 </h2>
 
@@ -42,32 +42,32 @@ export default function MapSection() {
 
                     {/* Right - Specialist Card */}
                     <div className="w-full lg:w-1/3 flex justify-center lg:justify-end">
-                        <div className="bg-white rounded-3xl p-8 sm:p-10 shadow-xl max-w-sm w-full text-center">
+                        <div className="bg-white dark:bg-gray-900 rounded-3xl p-8 sm:p-10 shadow-xl dark:shadow-gray-900/50 max-w-sm w-full text-center">
                             {/* Decorative Background */}
                             <div className="relative mb-6">
                                 <div className="absolute inset-0 flex items-center justify-center">
-                                    <div className="w-32 h-32 bg-gradient-to-br from-green-200 to-green-300 rounded-full opacity-50 blur-xl"></div>
+                                    <div className="w-32 h-32 bg-gradient-to-br from-green-200 to-green-300 dark:from-green-900 dark:to-green-800 rounded-full opacity-50 blur-xl"></div>
                                 </div>
                                 {/* Profile Image */}
                                 <div className="relative w-24 h-24 mx-auto">
                                     <img
                                         src={contactInfo?.image || "/Liendra2.png"}
                                         alt={contactInfo?.name || "Specialist"}
-                                        className="w-full h-full object-cover rounded-full border-4 border-white shadow-lg"
+                                        className="w-full h-full object-cover rounded-full border-4 border-white dark:border-gray-800 shadow-lg"
                                     />
                                 </div>
                             </div>
 
                             {/* Name & Title */}
-                            <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-1">
+                            <h3 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-1">
                                 {contactInfo?.name || "Support Specialist"}
                             </h3>
-                            <p className="text-gray-500 text-sm mb-6">
+                            <p className="text-gray-500 dark:text-gray-400 text-sm mb-6">
                                 {contactInfo?.title || "Customer Support"}
                             </p>
 
                             {/* Description */}
-                            <p className="text-gray-500 text-sm leading-relaxed mb-8">
+                            <p className="text-gray-500 dark:text-gray-400 text-sm leading-relaxed mb-8">
                                 Siap membantu Anda menemukan hunian terbaik dengan solusi tepat dan proses yang mudah.
                             </p>
 
@@ -76,7 +76,7 @@ export default function MapSection() {
                                 {/* Call Schedule Button */}
                                 <a
                                     href="/contact"
-                                    className="flex-1 bg-green-100 hover:bg-green-200 text-green-700 font-semibold px-5 py-3 rounded-xl flex items-center justify-center gap-2 transition-colors"
+                                    className="flex-1 bg-green-100 dark:bg-green-900/50 hover:bg-green-200 dark:hover:bg-green-800/50 text-green-700 dark:text-green-400 font-semibold px-5 py-3 rounded-xl flex items-center justify-center gap-2 transition-colors"
                                 >
                                     Buat Janji Konsultasi
                                 </a>

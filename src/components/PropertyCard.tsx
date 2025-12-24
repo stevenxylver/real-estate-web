@@ -52,10 +52,10 @@ export default function PropertyCard({
     };
 
     return (
-        <div className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+        <div className="bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-sm hover:shadow-md dark:shadow-gray-900/50 transition-shadow">
             {/* Image with Link */}
             <Link href={`/properties/${slug}`} className="block group">
-                <div className="relative aspect-[4/3] bg-gray-200">
+                <div className="relative aspect-[4/3] bg-gray-200 dark:bg-gray-700">
                     {image ? (
                         <img
                             src={image}
@@ -63,14 +63,14 @@ export default function PropertyCard({
                             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                         />
                     ) : (
-                        <div className="w-full h-full flex items-center justify-center text-gray-400">
+                        <div className="w-full h-full flex items-center justify-center text-gray-400 dark:text-gray-500">
                             <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
                             </svg>
                         </div>
                     )}
                     {/* Status Badge */}
-                    <span className="absolute top-3 left-3 bg-white/90 backdrop-blur-sm text-xs font-medium px-3 py-1 rounded-full">
+                    <span className="absolute top-3 left-3 bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm text-xs font-medium px-3 py-1 rounded-full text-gray-900 dark:text-white">
                         {status_sale}
                     </span>
                 </div>
@@ -80,20 +80,20 @@ export default function PropertyCard({
             <div className="p-4">
                 <Link href={`/properties/${slug}`} className="block group">
                     <div className="flex items-start justify-between gap-2 mb-1">
-                        <h3 className="font-semibold text-gray-900 group-hover:text-blue-600 transition-colors">
+                        <h3 className="font-semibold text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
                             {title}
                         </h3>
-                        <span className="text-xs text-gray-400 whitespace-nowrap flex-shrink-0">
+                        <span className="text-xs text-gray-400 dark:text-gray-500 whitespace-nowrap flex-shrink-0">
                             {location}
                         </span>
                     </div>
                 </Link>
-                <p className="text-lg font-bold text-gray-900 mb-3">
+                <p className="text-lg font-bold text-gray-900 dark:text-white mb-3">
                     {formatPrice(priceStart)}
                 </p>
 
                 {/* Property Stats Grid */}
-                <div className="grid grid-cols-2 gap-2 text-sm text-gray-500 mb-4">
+                <div className="grid grid-cols-2 gap-2 text-sm text-gray-500 dark:text-gray-400 mb-4">
                     <span className="flex items-center gap-1">
                         <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
@@ -127,8 +127,8 @@ export default function PropertyCard({
                         onClick={handleBrosurClick}
                         disabled={!brosur}
                         className={`flex-1 flex items-center justify-center gap-2 px-3 py-2 rounded-lg text-sm font-medium transition-colors ${brosur
-                            ? "bg-gray-100 hover:bg-gray-200 text-gray-700"
-                            : "bg-gray-50 text-gray-400 cursor-not-allowed"
+                            ? "bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 text-gray-700 dark:text-gray-300"
+                            : "bg-gray-50 dark:bg-gray-800 text-gray-400 dark:text-gray-600 cursor-not-allowed"
                             }`}
                     >
                         <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">

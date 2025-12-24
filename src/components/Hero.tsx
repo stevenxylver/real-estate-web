@@ -65,11 +65,11 @@ export default function Hero() {
 
     if (isLoading) {
         return (
-            <section className="bg-gradient-to-b from-slate-100 to-slate-200 py-8 sm:py-12 overflow-hidden">
+            <section className="bg-gradient-to-b from-slate-100 to-slate-200 dark:from-gray-800 dark:to-gray-900 py-8 sm:py-12 overflow-hidden transition-colors duration-300">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6">
                     <div className="flex items-center justify-center">
                         <div className="w-full max-w-2xl lg:max-w-3xl">
-                            <div className="rounded-2xl lg:rounded-3xl overflow-hidden shadow-2xl h-64 sm:h-80 lg:h-96 bg-gray-200 animate-pulse"></div>
+                            <div className="rounded-2xl lg:rounded-3xl overflow-hidden shadow-2xl h-64 sm:h-80 lg:h-96 bg-gray-200 dark:bg-gray-700 animate-pulse"></div>
                         </div>
                     </div>
                 </div>
@@ -82,7 +82,7 @@ export default function Hero() {
     }
 
     return (
-        <section className="bg-gradient-to-b from-slate-100 to-slate-200 py-8 sm:py-12 overflow-hidden">
+        <section className="bg-gradient-to-b from-slate-100 to-slate-200 dark:from-gray-800 dark:to-gray-900 py-8 sm:py-12 overflow-hidden transition-colors duration-300">
             <div className="max-w-7xl mx-auto px-4 sm:px-6">
                 {/* Carousel Container */}
                 <div className="relative">
@@ -117,17 +117,17 @@ export default function Hero() {
                     {/* Navigation Arrows */}
                     <button
                         onClick={() => goToSlide((currentSlide - 1 + slides.length) % slides.length)}
-                        className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 lg:-translate-x-4 bg-white/90 hover:bg-white p-2 lg:p-3 rounded-full shadow-lg transition-all z-20 hidden sm:block"
+                        className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 lg:-translate-x-4 bg-white/90 dark:bg-gray-800/90 hover:bg-white dark:hover:bg-gray-700 p-2 lg:p-3 rounded-full shadow-lg transition-all z-20 hidden sm:block"
                     >
-                        <svg className="w-5 h-5 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg className="w-5 h-5 text-gray-700 dark:text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
                         </svg>
                     </button>
                     <button
                         onClick={() => goToSlide((currentSlide + 1) % slides.length)}
-                        className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-2 lg:translate-x-4 bg-white/90 hover:bg-white p-2 lg:p-3 rounded-full shadow-lg transition-all z-20 hidden sm:block"
+                        className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-2 lg:translate-x-4 bg-white/90 dark:bg-gray-800/90 hover:bg-white dark:hover:bg-gray-700 p-2 lg:p-3 rounded-full shadow-lg transition-all z-20 hidden sm:block"
                     >
-                        <svg className="w-5 h-5 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg className="w-5 h-5 text-gray-700 dark:text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                         </svg>
                     </button>
@@ -141,7 +141,7 @@ export default function Hero() {
                             onClick={() => goToSlide(index)}
                             className={`transition-all duration-300 ${index === currentSlide
                                 ? "w-8 h-2 bg-red-500 rounded-full"
-                                : "w-2 h-2 bg-gray-400 rounded-full hover:bg-gray-500"
+                                : "w-2 h-2 bg-gray-400 dark:bg-gray-600 rounded-full hover:bg-gray-500 dark:hover:bg-gray-500"
                                 }`}
                         />
                     ))}
