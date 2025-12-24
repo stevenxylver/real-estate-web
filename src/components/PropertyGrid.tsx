@@ -34,9 +34,14 @@ export default async function PropertyGrid() {
         const fullImageUrl = imageUrl
             ? (imageUrl.startsWith('http') ? imageUrl : `${STRAPI_URL}${imageUrl}`)
             : undefined;
-        const fullBrosurUrl = brosurUrl
+        let fullBrosurUrl = brosurUrl
             ? (brosurUrl.startsWith('http') ? brosurUrl : `${STRAPI_URL}${brosurUrl}`)
             : undefined;
+
+        // Fix Cloudinary PDF URLs (change /image/upload/ to /raw/upload/)
+        if (fullBrosurUrl && fullBrosurUrl.includes('cloudinary.com') && fullBrosurUrl.toLowerCase().endsWith('.pdf')) {
+            fullBrosurUrl = fullBrosurUrl.replace('/image/upload/', '/raw/upload/');
+        }
 
         return {
             slug: p.slug,

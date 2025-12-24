@@ -27,6 +27,16 @@ export default async function PropertyDetailPage({ params }: PageProps) {
         return url.startsWith('http') ? url : `${STRAPI_URL}${url}`;
     };
 
+    // Helper function to fix Cloudinary PDF URLs (change /image/upload/ to /raw/upload/)
+    const fixPdfUrl = (url: string | null): string | null => {
+        if (!url) return null;
+        // For Cloudinary URLs with PDF extension, change image/upload to raw/upload
+        if (url.includes('cloudinary.com') && url.toLowerCase().endsWith('.pdf')) {
+            return url.replace('/image/upload/', '/raw/upload/');
+        }
+        return url;
+    };
+
     // Handle image for both Strapi v4 and v5 formats (same as PropertyGrid)
     const imageUrlPath = property.image?.data?.attributes?.url || property.image?.url || property.image?.[0]?.url;
     const imageUrl = buildFullUrl(imageUrlPath);
@@ -51,7 +61,7 @@ export default async function PropertyDetailPage({ params }: PageProps) {
 
     // Handle brosur URL
     const brosurPath = property.brosur?.data?.attributes?.url || property.brosur?.url;
-    const brosurUrl = buildFullUrl(brosurPath);
+    const brosurUrl = fixPdfUrl(buildFullUrl(brosurPath));
 
     return (
         <>
