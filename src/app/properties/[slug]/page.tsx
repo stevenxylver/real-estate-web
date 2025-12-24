@@ -75,51 +75,51 @@ export default async function PropertyDetailPage({ params }: PageProps) {
                     {/* Right: Property Details */}
                     <div className="space-y-6">
                         {/* Title & Location */}
-                        <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3">
-                            <div className="flex-1 min-w-0">
+                        <div>
+                            <div className="flex items-start justify-between gap-3">
                                 <h1 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white">
                                     {property.title}
                                 </h1>
-                                <div className="flex items-start gap-2 mt-2 text-gray-500 dark:text-gray-400">
-                                    <svg
-                                        className="w-4 h-4 flex-shrink-0 mt-0.5"
-                                        fill="none"
-                                        stroke="currentColor"
-                                        viewBox="0 0 24 24"
+                                {property.roomvirtual ? (
+                                    <a
+                                        href={property.roomvirtual}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="flex-shrink-0 px-4 sm:px-5 py-2 sm:py-2.5 bg-blue-500 hover:bg-blue-600 text-white rounded-full text-sm font-medium transition-colors whitespace-nowrap"
                                     >
-                                        <path
-                                            strokeLinecap="round"
-                                            strokeLinejoin="round"
-                                            strokeWidth={2}
-                                            d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                                        />
-                                        <path
-                                            strokeLinecap="round"
-                                            strokeLinejoin="round"
-                                            strokeWidth={2}
-                                            d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-                                        />
-                                    </svg>
-                                    <span className="text-sm leading-tight">{property.location}</span>
-                                </div>
+                                        Virtual Room
+                                    </a>
+                                ) : (
+                                    <button
+                                        className="flex-shrink-0 px-4 sm:px-5 py-2 sm:py-2.5 bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-800 dark:text-gray-300 rounded-full text-sm font-medium transition-colors opacity-50 cursor-not-allowed whitespace-nowrap"
+                                        disabled
+                                    >
+                                        Virtual Room
+                                    </button>
+                                )}
                             </div>
-                            {property.roomvirtual ? (
-                                <a
-                                    href={property.roomvirtual}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="self-start px-4 sm:px-5 py-2 sm:py-2.5 bg-blue-500 hover:bg-blue-600 text-white rounded-full text-sm font-medium transition-colors whitespace-nowrap"
+                            <div className="flex items-start gap-2 mt-2 text-gray-500 dark:text-gray-400">
+                                <svg
+                                    className="w-4 h-4 flex-shrink-0 mt-0.5"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    viewBox="0 0 24 24"
                                 >
-                                    Virtual Room
-                                </a>
-                            ) : (
-                                <button
-                                    className="self-start px-4 sm:px-5 py-2 sm:py-2.5 bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-800 dark:text-gray-300 rounded-full text-sm font-medium transition-colors opacity-50 cursor-not-allowed whitespace-nowrap"
-                                    disabled
-                                >
-                                    Virtual Room
-                                </button>
-                            )}
+                                    <path
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                        strokeWidth={2}
+                                        d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                                    />
+                                    <path
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                        strokeWidth={2}
+                                        d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                                    />
+                                </svg>
+                                <span className="text-sm leading-tight">{property.location}</span>
+                            </div>
                         </div>
 
                         {/* Property Stats */}
@@ -239,7 +239,7 @@ export default async function PropertyDetailPage({ params }: PageProps) {
                         </div>
 
                         {/* Price Section */}
-                        <div className="bg-[#f5ebe0] rounded-2xl p-6">
+                        <div className="bg-[#f5ebe0] dark:bg-gray-800 rounded-2xl p-6">
                             <div className="flex items-center justify-between mb-1">
                                 <h3 className="text-lg font-bold text-gray-900 dark:text-white">
                                     Price
