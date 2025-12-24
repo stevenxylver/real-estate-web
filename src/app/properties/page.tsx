@@ -46,6 +46,9 @@ async function PropertiesContent({ page }: { page: number }) {
             ? (brosurUrl.startsWith('http') ? brosurUrl : `${STRAPI_URL}${brosurUrl}`)
             : undefined;
 
+        // Prioritize brosurLink (Google Drive) over brosur (Cloudinary)
+        const finalBrosurUrl = p.brosurLink || fullBrosurUrl;
+
         return {
             slug: p.slug,
             title: p.title,
@@ -57,7 +60,7 @@ async function PropertiesContent({ page }: { page: number }) {
             image: fullImageUrl,
             luastanah: p.luastanah,
             luasbangunan: p.luasbangunan,
-            brosur: fullBrosurUrl,
+            brosur: finalBrosurUrl,
         };
     });
 

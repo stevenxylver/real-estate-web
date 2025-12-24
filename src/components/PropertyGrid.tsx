@@ -38,6 +38,9 @@ export default async function PropertyGrid() {
             ? (brosurUrl.startsWith('http') ? brosurUrl : `${STRAPI_URL}${brosurUrl}`)
             : undefined;
 
+        // Prioritize brosurLink (Google Drive) over brosur (Cloudinary)
+        const finalBrosurUrl = p.brosurLink || fullBrosurUrl;
+
         return {
             slug: p.slug,
             title: p.title,
@@ -49,7 +52,7 @@ export default async function PropertyGrid() {
             image: fullImageUrl,
             luastanah: p.luastanah,
             luasbangunan: p.luasbangunan,
-            brosur: fullBrosurUrl,
+            brosur: finalBrosurUrl,
         };
     });
 

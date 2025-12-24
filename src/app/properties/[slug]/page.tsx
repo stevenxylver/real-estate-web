@@ -54,9 +54,10 @@ export default async function PropertyDetailPage({ params }: PageProps) {
     // Get thumbnail images from gallery only (up to 4)
     const thumbnailImages = galleryImages.slice(0, 4);
 
-    // Handle brosur URL
+    // Handle brosur URL - prioritize brosurLink (Google Drive) over brosur (Cloudinary)
     const brosurPath = property.brosur?.data?.attributes?.url || property.brosur?.url;
-    const brosurUrl = fixPdfUrl(buildFullUrl(brosurPath));
+    const cloudinaryBrosurUrl = fixPdfUrl(buildFullUrl(brosurPath));
+    const brosurUrl = property.brosurLink || cloudinaryBrosurUrl;
 
     return (
         <>
