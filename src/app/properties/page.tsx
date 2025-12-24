@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 import Pagination from "@/components/Pagination";
 import { getProperties } from "@/lib/strapi";
 import { Suspense } from "react";
+import MapSection from "@/components/MapSection";
 
 const STRAPI_URL = process.env.NEXT_PUBLIC_STRAPI_URL || "http://localhost:1337";
 
@@ -131,6 +132,7 @@ export default async function PropertiesPage({ searchParams }: PageProps) {
                     <PropertiesContent page={currentPage} />
                 </Suspense>
             </section>
+            <MapSection />
             <Footer />
         </>
     );

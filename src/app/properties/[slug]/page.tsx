@@ -326,10 +326,9 @@ export default async function PropertyDetailPage({ params }: PageProps) {
                     </div>
                 </div>
                 <Facilities />
-                <MapSection />
-                <Footer />
-
             </main>
+            <MapSection />
+            <Footer />
         </>
     );
 }
