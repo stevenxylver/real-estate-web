@@ -122,6 +122,7 @@ export default function Navbar() {
                         </span>
                     )}
                     <Link href="/facilities" className="hover:text-gray-900 dark:hover:text-white transition-colors">Facilities</Link>
+                    <Link href="/kpr" className="hover:text-gray-900 dark:hover:text-white transition-colors">Hitung KPR</Link>
                     <Link href="/contact" className="hover:text-gray-900 dark:hover:text-white transition-colors">Contact</Link>
                 </nav>
 
@@ -214,6 +215,12 @@ export default function Navbar() {
                             </span>
                         )}
                         <Link href="/facilities" className="hover:text-gray-900 dark:hover:text-white">Facilities</Link>
+                        <Link href="/kpr" onClick={() => setIsMenuOpen(false)} className="flex items-center justify-between hover:text-gray-900 dark:hover:text-white">
+                            Hitung KPR
+                            <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                            </svg>
+                        </Link>
                         <Link href="/contact" onClick={() => setIsMenuOpen(false)} className="hover:text-gray-900 dark:hover:text-white">Contact</Link>
                         <a
                             href="https://wa.me/6281808187943?text=Halo%2C%20mau%20tanya%20info%20rumah%20yang%20tersedia.%0AApakah%20masih%20ada%20unit%20dan%20promo%20saat%20ini%3F"
